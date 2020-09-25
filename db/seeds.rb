@@ -19,4 +19,4 @@ pc = Console_type.create(name: "PC")
 
 #Games
 
-halo= Game.create(name: "Halo",developer: "bungi", year: 2012, rating: "M", console_type: )
+halo= Game.create(name: "Halo",developer: "bungi", year: 2012, rating: "M")
