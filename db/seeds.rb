@@ -31,7 +31,7 @@ call_of_duty = Game.create(name: "Call of Duty", developer: "Activision", releas
 spyro = Game.create(name: "Spyro", developer: "Insomniac Games", release_date: 1998, rating: "E")
 mario = Game.create(name: "Mario", developer: "bungi", release_date: 1985, rating: "E")
 god_of_war = Game.create(name: "God of war", developer: "Santa Monica Studio ", release_date: 2005, rating: "M")
- over_watch = Game.create(name: "Overwatch", developer: "Blizzard ", release_date: 2015, rating: "T")
+over_watch = Game.create(name: "Overwatch", developer: "Blizzard ", release_date: 2015, rating: "T")
 
 
 #Listings
