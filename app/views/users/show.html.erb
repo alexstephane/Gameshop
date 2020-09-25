@@ -1,0 +1,12 @@
+<h1> <%= @user.name %>'s Homepage </h1>
+<br><br>
+
+<div> 
+  <%= @user.age %>
+<br>
+<ul>
+  <% @user.games.each do |game|%>
+<br>
+    <li><%= link_to game.name, game_path(game) %> </li>
+<%end%>
+</div>

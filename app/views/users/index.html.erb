@@ -1,0 +1,8 @@
+<h1> welcome </h1>
+<br><br>
+<ul>
+<% @users.each do |user| %>
+<br>
+  <li> <%= link_to user.name, user_path(user) %> </li>
+<%end%>
+</ul>
