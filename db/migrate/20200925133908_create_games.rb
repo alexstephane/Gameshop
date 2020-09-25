@@ -5,7 +5,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.string :developer
       t.integer :release_date
       t.string :rating
-      t.string :console_type
+      
 
       t.timestamps
     end

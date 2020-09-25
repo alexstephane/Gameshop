@@ -3,9 +3,10 @@ class CreateListings < ActiveRecord::Migration[6.0]
     create_table :listings do |t|
       t.integer :game_id
       t.integer :user_id
-      t.string :condition
+      t.integer :console_type_id
       t.string :quality
-      t.integer :price
+      t.string :condition
+      t.integer :listed_price
       t.boolean :availability
 
       t.timestamps
