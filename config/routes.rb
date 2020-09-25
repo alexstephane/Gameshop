@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :console_types
   resources :listings
   resources :games
   resources :users
