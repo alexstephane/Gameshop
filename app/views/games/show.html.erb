@@ -1,6 +1,6 @@
 
 
-<h1><%=@game.name%></h1>
+<h1><%="#{@game.name} has been added"%> </h1>
 <%= link_to "Click here to edit #{@game.name}", edit_game_path(@game) %> <br>
 <%= link_to "Click here to list #{@game.name}", listing_path() %> <br>
 

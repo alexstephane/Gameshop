@@ -1,4 +1,6 @@
 <%@listings.each do |listing|%>
-<li><%= listing.game.name%></li>
-availability:<%= listing.availability%>
+    <%if listing.availability == true%>
+        <li><%= link_to listing.game.name, listing_path(listing)%></li>
+    <%end%>
+    
 <%end%>

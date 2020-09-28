@@ -14,11 +14,15 @@
 <%= f.collection_select :game_id, Game.all, :id, :name%> 
 <%= f.label :console_type %>
 <%= f.collection_select :console_type_id, ConsoleType.all, :id, :name%> 
-<%= f.label :quality%>
-<%= f.text_field :quality %>
+
+<%= f.label :quality %>
+    <%= f.select :quality, ["New", "Used"] %>
 <%= f.label :condition%>
 <%= f.text_field :condition %>
 <%= f.label :listed_price%>
 <%= f.number_field :listed_price %>
+
+ <%= f.label :availability, "Availability?" %>
+    <%= f.select :availability, [true, false] %>
 <%= f. submit %></li>
 <%end%>
