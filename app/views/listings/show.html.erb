@@ -1,4 +1,20 @@
 <h1>Thank you for listing <%=@listing.game.name%></h1> <br>
 
-<h2><%= link_to "Click here to see all available listings", listings_path() %></h2> <br>
+<%= @listing.user.name %>
+<%= @listing.console_type.name %>
+<%= @listing.condition %>
+<%= @listing.listed_price %>
+<%= @listing.availability %>
+
+
+<%= button_to "buying_new_listing_button", user_path(@user), :method => :update %>
+
+#add button
+when button is pushed, changes the value of availability to false
+and changes the listing owner to the current listing
+
+
+
+<h4><%= link_to "Click here to see all available listings", listings_path() %></h4> <br>
+
 
