@@ -1,0 +1,32 @@
+
+<% if @listing.errors %>
+    <% @listing  .errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+<% end %>
+
+
+
+<%= form_for @listing do |f|%>
+<%= f.label :user %>
+<%= f.collection_select :user_id, User.all, :id, :name%> 
+<br>
+<%= f.label :game %>
+<%= f.collection_select :game_id, Game.all, :id, :name%> 
+<br>
+<%= f.label :console_type %>
+<%= f.collection_select :console_type_id, ConsoleType.all, :id, :name%> 
+<br>
+<%= f.label :quality %>
+    <%= f.select :quality, ["New", "Used"] %>
+<br>
+<%= f.label :condition%>
+<%= f.text_field :condition %>
+<br>
+<%= f.label :listed_price%>
+<%= f.number_field :listed_price %>
+
+ <%= f.label :availability, "Availability?" %>
+    <%= f.select :availability, [true, false] %>
+<%= f. submit %></li>
+<%end%>

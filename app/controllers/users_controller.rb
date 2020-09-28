@@ -29,8 +29,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def delete
-
+  def destroy
+    User.destroy(params[:id])
+    redirect_to users_path
   end
 
 
