@@ -39,10 +39,12 @@ class GamesController < ApplicationController
   end
 
   def detroy
-    User.destroy(params[:id])
+    Game.destroy(params[:id])
     redirect_to games_path
 
   end
+
+  private
 
   def game_strong_params
     params.require(:game).permit(:name, :developer, :release_date, :rating)

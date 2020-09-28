@@ -1,3 +1,4 @@
 <%@listings.each do |listing|%>
-<%= listing.user_id%>
+<li><%= listing.game.name%></li>
+availability:<%= listing.availability%>
 <%end%>
