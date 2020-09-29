@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  
   def index
     @games = Game.all
   end
@@ -6,9 +7,9 @@ class GamesController < ApplicationController
   def show 
     @game = Game.find(params[:id])
   end
+
   def new
     @game = Game.new
-
   end
 
   def create
@@ -18,13 +19,11 @@ class GamesController < ApplicationController
     else
         render :new
     end  
-
   end
 
   def edit
     @game = Game.find(params[:id])
     render :edit
-
   end
 
   def update
@@ -35,15 +34,15 @@ class GamesController < ApplicationController
         else   
             render :edit
         end  
-
   end
 
   def detroy
     Game.destroy(params[:id])
     redirect_to games_path
-
   end
 
+
+  
   private
 
   def game_strong_params

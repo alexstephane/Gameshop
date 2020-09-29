@@ -1,21 +1,11 @@
 class ConsoleTypesController < ApplicationController
-  def new
-
+  
+  def index
+    @console_types = ConsoleType.all
   end
 
-  def create
-
+  def show
+    @console_type = ConsoleType.find(params[:id])
   end
 
-  def edit
-
-  end
-
-  def update
-
-  end
-
-  def delete
-
-  end
 end

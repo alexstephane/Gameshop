@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+
   def index
     @listings = Listing.all
   end
@@ -6,9 +7,9 @@ class ListingsController < ApplicationController
   def show 
     @listing = Listing.find(params[:id])
   end
+
   def new
     @listing = Listing.new
-
   end
 
   def create
@@ -18,24 +19,21 @@ class ListingsController < ApplicationController
     else
         render :new
     end  
-
   end
 
   def edit
     @listing = Listing.find(params[:id])
     render :edit
-
   end
 
   def update
-    listing= Listing.find(params[:id])
-        @listing= Listing.update(listing_strong_params)
-        if @listing.valid?
-            redirect_to listing_path(@game)
-        else   
-            render :edit
-        end  
-
+    @listing = Listing.find(params[:id])
+      @listing = Listing.update(listing_strong_params)
+      if @listing.valid?
+          redirect_to listing_path(@game)
+      else   
+          render :edit
+      end  
   end
 
   def detroy
@@ -45,19 +43,28 @@ class ListingsController < ApplicationController
   end
 
   def buying_new_listing_button
-    Listing.update(params[:id])
+    @listing = Listing.find(params[:id])
       @listing = Listing.update(listing_strong_params)
-      @listing.availability = false
-      @listing.user = @user
-    redirect_to user_path(@user)
+      if @listing.valid?
+         @listing.availability = false
+         @listing.user = user.id(4)
+         redirect_to user_path(user.id(4))
+      else
+        redirect_to listing_path(@listing)
+      end
   end
 
 
 
 
+ 
   private
 
   def listing_strong_params
     params.require(:listing).permit(:game_id, :user_id, :console_type_id, :quality, :condition, :listed_price, :availability)
   end
-  end
+
+
+
+  
+end

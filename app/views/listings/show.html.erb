@@ -6,9 +6,15 @@
 <%= @listing.listed_price %>
 <%= @listing.availability %>
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<%= button_to "buying_new_listing_button", user_path(@user), :method => :update %>
-
+<%= button_to('Buy', listing_path(@listing),
+        method => :buying_new_listing_button
+) %>
 #add button
 when button is pushed, changes the value of availability to false
 and changes the listing owner to the current listing
@@ -16,5 +22,4 @@ and changes the listing owner to the current listing
 
 
 <h4><%= link_to "Click here to see all available listings", listings_path() %></h4> <br>
-
 
