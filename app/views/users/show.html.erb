@@ -2,8 +2,9 @@
 <br><br>
 
 <div> 
-  <%= @user.age %>
+ <h2>Age: </h2><h3><%= @user.age %></h3>
 <br>
+<h2>Games Owned:</h2>
 <ul>
   <% @user.games.each do |game|%>
 <br>

@@ -27,13 +27,14 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listing = Listing.find(params[:id])
-      @listing = Listing.update(listing_strong_params)
-      if @listing.valid?
+    Listing.find(params[:id])
+      Listing.update(listing_strong_params)
+      
           redirect_to listing_path(@game)
-      else   
+      #else   
           render :edit
-      end  
+      
+    end 
   end
 
   def detroy
@@ -42,16 +43,19 @@ class ListingsController < ApplicationController
 
   end
 
-  def buying_new_listing_button
-    @listing = Listing.find(params[:id])
-      @listing = Listing.update(listing_strong_params)
-      if @listing.valid?
+  def buy
+    
+   
+    Listing.find(params[:id])
+      @listing= Listing.update(listing_strong_params)
+       if @listing.valid?
          @listing.availability = false
          @listing.user = user.id(4)
          redirect_to user_path(user.id(4))
-      else
+       else
         redirect_to listing_path(@listing)
       end
+      
   end
 
 
@@ -67,4 +71,3 @@ class ListingsController < ApplicationController
 
 
   
-end
