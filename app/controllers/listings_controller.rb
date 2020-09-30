@@ -15,9 +15,9 @@ class ListingsController < ApplicationController
   def create
     @listing= Listing.new(listing_strong_params)
     if @listing.save
-        redirect_to listing_path(@listing)
+      redirect_to listing_path(@listing)
     else
-        render :new
+      render :new
     end  
   end
 
@@ -28,35 +28,35 @@ class ListingsController < ApplicationController
 
   def update
     Listing.find(params[:id])
-      Listing.update(listing_strong_params)
+    Listing.update(listing_strong_params)
+    redirect_to listing_path(@game)
+   
+    render :edit
       
-          redirect_to listing_path(@game)
-      #else   
-          render :edit
-      
-    end 
+    
   end
 
-  def detroy
-    bybug
+  
+  def buy
+  byebug
+    Listing.find(params[:id])
+    @listing= Listing.update(listing_strong_params)
+    if @listing.valid?
+      @listing.availability = false
+      @listing.user = user.id(43)
+      redirect_to user_path(user.id(43))
+    else
+      redirect_to listing_path(@listing)
+    end
+      
+  end
+    
+  def destroy
+    
     Listing.destroy(params[:id])
     redirect_to listings_path
 
   end
-
-  def buy
-    @Listing.find(params[:id])
-      @listing= Listing.update(listing_strong_params)
-       if @listing.valid?
-         @listing.availability = false
-         @listing.user = user.id(43)
-         redirect_to user_path(user.id(43))
-       else
-        redirect_to listing_path(@listing)
-      
-        
-  end
-
 
 
 
