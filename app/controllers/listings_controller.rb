@@ -38,17 +38,13 @@ class ListingsController < ApplicationController
 
   
   def buy
-  byebug
-    Listing.find(params[:id])
-    @listing= Listing.update(listing_strong_params)
+    @listing = Listing.find(params[:id])
+    @listing.update(user_id: 5, availability: false)
     if @listing.valid?
-      @listing.availability = false
-      @listing.user = user.id(43)
-      redirect_to user_path(user.id(43))
+      redirect_to user_path(5)
     else
       redirect_to listing_path(@listing)
     end
-      
   end
     
   def destroy
@@ -58,9 +54,6 @@ class ListingsController < ApplicationController
 
   end
 
-
-
- 
   private
 
   def listing_strong_params

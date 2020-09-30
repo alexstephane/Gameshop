@@ -36,13 +36,11 @@ class GamesController < ApplicationController
         end  
   end
 
-  def detroy
+  def destroy
     Game.destroy(params[:id])
     redirect_to games_path
   end
 
-
-  
   private
 
   def game_strong_params

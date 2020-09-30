@@ -1,13 +1,16 @@
 <h1> <%= @user.name %>'s Homepage </h1>
-<br><br>
+<br>
 
 <div> 
  <h2>Age: </h2><h3><%= @user.age %></h3>
 <br>
-<h2>Games Owned:</h2>
+<h2>Games Owned (listings):</h2>
 <ul>
-  <% @user.games.each do |game|%>
+  <% @user.listings.each do |listing|%>
 <br>
-    <li><%= link_to game.name, game_path(game) %> </li>
+    <li><%= link_to listing.game.name, listing_path(listing) %> </li>
 <%end%>
 </div>
+
+
+<%= button_to 'Buy This Listing', {:controller => "listings", :action => "buy", :method => "post" } %>

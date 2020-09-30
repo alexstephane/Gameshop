@@ -1,24 +1,21 @@
-<h1>Details </h1<br>
-<h2><%=@listing.game.name%></h2> <br>
+<h1>Details </h1> 
+<h2><%=@listing.game.name%></h2>
+<br>
 
 
 
 Listed:  <%= @listing.user.name %><br>
-console_type:  <%= @listing.console_type.name %><br>
+Console_type:  <%= @listing.console_type.name %><br>
 Condition:  <%= @listing.condition %><br>
 Listed Price:  <%= @listing.listed_price %><br>
 Availability: <%= @listing.availability %>
 
+<br>
+<br>
+<br>
 
+<%= button_to 'Buy This Listing', {:controller => "listings", :action => "buy", :method => "post" } %>
 <br>
-<br>
-<br>
-<%# <%= button_to "New", :action => "new", :form_class => "new-thing" %> %
-<%= button_to "Buy This Listing", listing_path(@listing), params: {availability: false}, :method => :post %>
-#add button
-when button is pushed, changes the value of availability to false
-and changes the listing owner to the current listing
-
 
 
 <h4><%= link_to "Click here to see all available listings", listings_path() %></h4> <br>
