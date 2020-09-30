@@ -38,24 +38,23 @@ class ListingsController < ApplicationController
   end
 
   def detroy
+    bybug
     Listing.destroy(params[:id])
     redirect_to listings_path
 
   end
 
   def buy
-    
-   
-    Listing.find(params[:id])
+    @Listing.find(params[:id])
       @listing= Listing.update(listing_strong_params)
        if @listing.valid?
          @listing.availability = false
-         @listing.user = user.id(4)
-         redirect_to user_path(user.id(4))
+         @listing.user = user.id(43)
+         redirect_to user_path(user.id(43))
        else
         redirect_to listing_path(@listing)
-      end
       
+        
   end
 
 
@@ -68,6 +67,6 @@ class ListingsController < ApplicationController
     params.require(:listing).permit(:game_id, :user_id, :console_type_id, :quality, :condition, :listed_price, :availability)
   end
 
-
+end
 
   
