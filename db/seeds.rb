@@ -42,4 +42,3 @@ spyro= Listing.create(game: spyro, user: nick, console_type: pc, quality: "new",
 mario_listing = Listing.create(game: mario, user: alex, console_type: nintendo, quality: "new", listed_price: 50, availability: true )
 god_of_war_listing = Listing.create(game: god_of_war, user: nick, console_type: playstation, quality: "new", listed_price: 25, availability: true)
 over_watch_listing = Listing.create(game: over_watch, user: nick, console_type: pc, quality: "new", listed_price: 60, availability: true)
-
