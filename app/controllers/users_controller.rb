@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def index
     @users = User.all
   end
@@ -15,11 +16,29 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       render :new
     end
-  end
+    
+  end   
+    #   @user = User.new(user_params)
+        #   if @user.save
+        #     redirect_to user_path(@user)
+
+        #   else
+        #     render :new
+
+        #   end
+        #  end
+  
+
+
+
+
+
 
   def edit
     @user = User.find(params[:id])
@@ -31,9 +50,9 @@ class UsersController < ApplicationController
 
   def sell
     @listing = Listing.find(params[:id])
-    @listing.update(user_id: 5, availability: false)
+    @listing.update(user_id: session[:user_id], availability: false)
     if @listing.valid?
-      redirect_to user_path(5)
+      redirect_to user_path(session[:user_id])
     else
       redirect_to listing_path(@listing)
     end
@@ -47,7 +66,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :age)
+    params.require(:user).permit(:name, :username, :age, :password)
   end
 
 end

@@ -17,11 +17,8 @@
 <%= f.label :console_type %>
 <%= f.collection_select :console_type_id, ConsoleType.all, :id, :name%> 
 <br>
-<%= f.label :quality %>
-    <%= f.select :quality, ["New", "Used"] %>
-<br>
 <%= f.label :condition%>
-<%= f.text_field :condition %>
+<%= f.select :condition, ["New", "Like New", "Very Good", "Good", "Acceptable"] %>
 <br>
 <%= f.label :listed_price%>
 <%= f.number_field :listed_price %>

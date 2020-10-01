@@ -11,6 +11,21 @@
     <li><%= link_to listing.game.name, listing_path(listing) %> </li>
 <%end%>
 </div>
+<br>
+<br>
+<br>
+<%= link_to "Create Game ", new_game_path() %> 
+<br>
+<br>
+<%= link_to "View Games ", listings_path() %> 
+<br>
+<br>
+<%= link_to "Create listing ", new_listing_path() %> 
+<br>
+<br>
+<%= link_to "View listings ", listings_path() %> <br> <br>
+
+<%= button_to "Delete Account", user_path(@user), :method => :delete %><br>
 
 
-<%= button_to 'Buy This Listing', {:controller => "listings", :action => "buy", :method => "post" } %>
+

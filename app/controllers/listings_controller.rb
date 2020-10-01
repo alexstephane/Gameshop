@@ -39,9 +39,9 @@ class ListingsController < ApplicationController
   
   def buy
     @listing = Listing.find(params[:id])
-    @listing.update(user_id: 5, availability: false)
+    @listing.update(user_id: 1, availability: false)
     if @listing.valid?
-      redirect_to user_path(5)
+      redirect_to user_path(1)
     else
       redirect_to listing_path(@listing)
     end
