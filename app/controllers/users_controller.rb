@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
 
 
-
+# testing
   def edit
     @user = User.find(params[:id])
   end
