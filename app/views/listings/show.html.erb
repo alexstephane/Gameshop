@@ -4,10 +4,10 @@
 
 
 
-Listed:  <%= @listing.user.name %><br>
-Console_type:  <%= @listing.console_type.name %><br>
-Condition:  <%= @listing.condition %><br>
-Listed Price:  <%= @listing.listed_price %><br>
+Listed:  <%= @listing.user.name %> <br>
+Console_type:  <%= @listing.console_type.name %> <br>
+Condition:  <%= @listing.condition %> <br>
+Listed Price:  <%= @listing.listed_price %> <br>
 Availability: <%= @listing.availability %>
 
 <br>
@@ -18,6 +18,9 @@ Availability: <%= @listing.availability %>
 <br>
 
 
-<h4><%= link_to "View all available listings", listings_path() %></h4> <br>
-<h4><%= link_to "My Home Page", user_path(session[:user_id]) %></h4> <br>
+<%= button_to("View Available Listings", listings_path(),
+        method: "get") %>
+<br><br>
+<%= button_to("#{User.find(session[:user_id]).name}'s Homepage", user_path(session[:user_id]),
+        method: "get")  %>
 

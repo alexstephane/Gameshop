@@ -5,16 +5,18 @@ Rails.application.routes.draw do
   resources :listings   
   resources :games
   resources :users
-  
+ 
 
 
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
+  get 'login', to: 'sessions#login'
+  post 'login', to: 'sessions#process_login'
   get 'welcome', to: 'sessions#welcome'
   
   
-
+  post "/login", to: "users#process_login"
   post "/listings/:id", to: "listings#buy", as: "buy"
+  
+
   
   
  

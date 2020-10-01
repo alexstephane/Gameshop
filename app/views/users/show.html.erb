@@ -2,22 +2,22 @@
 <br>
 
 <div> 
- <h2>Age: </h2><h3><%= @user.age %></h3>
+<h3>Age: <%= @user.age %></h3>
 <br>
-<h2>Games Owned (listings):</h2>
-<ul>
-  <% @user.listings.each do |listing|%>
-<br>
-    <li><%= link_to listing.game.name, listing_path(listing) %> </li>
-<%end%>
+<h3>Games Owned (listings):</h3>
 </div>
-<br>
-<br>
+
+<ul>
+<% @user.listings.each do |listing|%>
+  <li><%= link_to listing.game.name, listing_path(listing) %> </li>
+<%end%>
+</ul>
+
 <br>
 <%= link_to "Create Game ", new_game_path() %> 
 <br>
 <br>
-<%= link_to "View Games ", listings_path() %> 
+<%= link_to "View Games ", games_path() %> 
 <br>
 <br>
 <%= link_to "Create listing ", new_listing_path() %> 

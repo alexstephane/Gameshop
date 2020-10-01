@@ -1,8 +1,21 @@
 
 
 <h1><%="#{@game.name} "%> </h1>
-<%= link_to "Click here to edit #{@game.name}", edit_game_path(@game) %> <br>
-<%= link_to "Click here to list #{@game.name}", listing_path() %> <br>
+<br><br>
 
+
+<p>Developer: <%= @game.developer %></p>
+<p>Release Date: <%= @game.release_date %></p>
+<p>Rating: <%= @game.rating %></p> 
+<br>
+<br>
+
+
+<%= link_to "Edit #{@game.name}", edit_game_path(@game) %> 
+<br>
+<br>
+<%= link_to "List #{@game.name}", new_listing_path() %> 
+<br>
+<br>
 
 <%= button_to "Delete this game", game_path(@game), :method => :delete %>

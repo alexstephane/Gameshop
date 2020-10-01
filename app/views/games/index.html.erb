@@ -1,3 +1,11 @@
+<h1> Games </h1>
+
+
 <%@games.each do |game|%>
    <li><%= link_to game.name, game_path(game) %></li>
 <%end%>
+<br>
+
+<%= button_to("#{User.find(session[:user_id]).name}'s Homepage", user_path(session[:user_id]),
+        method: "get")  %>
+        

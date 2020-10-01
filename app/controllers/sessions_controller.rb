@@ -1,13 +1,21 @@
 class SessionsController < ApplicationController
-  def new
-  end
-
-  def create
-  end
 
   def login
+    render :login
+  end
+
+  def process_login
+    user = User.find_by(username: params[:username])
+    if user
+      session[:user_id] = user.id
+      redirect_to user_path(user)
+    else
+      byebug
+      render :login
+    end
   end
 
   def welcome
   end
+
 end
