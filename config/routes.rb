@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   
   post "/login", to: "users#process_login"
   
-  post "/listings/:id", to: "listings#buy", as: "buy"
-  post "/listings/:id", to: "listings#sell", as: "sell"
+  post "/listings/:id/buy", to: "listings#buy", as: "buy"
+  post "/listings/:id/sell", to: "listings#sell", as: "sell"
   
   
  

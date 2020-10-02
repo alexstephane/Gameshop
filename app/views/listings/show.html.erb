@@ -1,30 +1,29 @@
 <div id="demotext">
 
 <h1>Details </h1> 
-<h2><%=@listing.game.name%></h2>
-<br>
+<h3><%=@listing.game.name%></h3>
+
 </div>
 
 
-Listed:  <%= @listing.user.name %> <br>
-Console_type:  <%= @listing.console_type.name %> <br>
-Condition:  <%= @listing.condition %> <br>
-Listed Price:  <%= @listing.listed_price %> <br>
-Availability: <%= @listing.availability %>
+Listed: <%= @listing.user.name %> <br>
+Console Type: <%= @listing.console_type.name %> <br>
+Condition: <%= @listing.condition %> <br>
+Listed Price: <%= @listing.listed_price %> <br>
+Availability: <%= @listing.availability %> 
 
-<br>
 <br>
 <br>
 
 <% if @listing.availability == true %>
-        <%= button_to 'Buy This Listing', {:controller => "listings", :action => "buy", :method => "post" } %> <br>
+        <%= button_to 'Buy This Listing', buy_path(@listing) %><br>
 <%else%> 
-        <%= button_to 'Sell This Listing', {:controller => "listings", :action => "sell", :method => "post" } %><br>
+        <%= button_to 'Sell This Listing', sell_path(@listing) %><br>
 <%end%>
 
 <%= button_to("View Available Listings", listings_path(),
         method: "get") %>
-<br><br>
+<br>
 <%= button_to("#{User.find(session[:user_id]).name}'s Homepage", user_path(session[:user_id]),
         method: "get")  %>
 
