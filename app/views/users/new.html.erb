@@ -1,5 +1,9 @@
- <h1>Sign Up</h1>
  
+ <div id="demotext">
+ <h1>Sign Up</h1>
+ </div>
+
+
  <%= form_for @user do |f| %>
    <p> <%= f.label :name %>
     <%= f.text_field :name %></p>
@@ -15,4 +19,6 @@
     
     <%= f.submit "Create Account" %>
 <% end %>
+
+
 

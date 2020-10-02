@@ -1,9 +1,17 @@
-<h1> All Users </h1>
-<br>
 
-<ul>
+
+
+
+
+<div id="demotext">
+<h1> All Users </h1>
+</div>
+
+
+
 <% @users.each do |user| %>
 <br>
-  <li> <%= link_to user.name, user_path(user) %> </li>
+<div id="demotext"> <%= link_to user.name, user_path(user) %> </div> 
 <%end%>
-</ul>
+
+

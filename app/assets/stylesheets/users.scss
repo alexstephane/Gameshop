@@ -1,3 +1,52 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.users {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2%;
+    margin-left: 6%;
+    width: 95%;
+    
+}
+
+#demotext {
+color: #FFFFFF;
+background: #FFFFFF;
+text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+color: #FFFFFF;
+background: #FFFFFF;
+}
+
+#demotext {
+    color: #FFF;
+    background-color:#010504;
+    text-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px;
+
+    ont-family: "Arial Black", Gadget, sans-serif;
+font-size: 31px;
+letter-spacing: 3.2px;
+word-spacing: 1.2px;
+color: #000000;
+font-weight: 400;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+
+
+
+    }
+
+    #demo {
+       
+        
+
+        color: #FFF;
+        background-color:#010504;
+        text-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px;
+ 
+
+}
