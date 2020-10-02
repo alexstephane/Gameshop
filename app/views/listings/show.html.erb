@@ -1,7 +1,9 @@
+<div id="demotext">
+
 <h1>Details </h1> 
 <h2><%=@listing.game.name%></h2>
 <br>
-
+</div>
 
 
 Listed:  <%= @listing.user.name %> <br>
@@ -14,9 +16,11 @@ Availability: <%= @listing.availability %>
 <br>
 <br>
 
-<%= button_to 'Buy This Listing', {:controller => "listings", :action => "buy", :method => "post" } %>
-<br>
-
+<% if @listing.availability == true %>
+        <%= button_to 'Buy This Listing', {:controller => "listings", :action => "buy", :method => "post" } %> <br>
+<%else%> 
+        <%= button_to 'Sell This Listing', {:controller => "listings", :action => "sell", :method => "post" } %><br>
+<%end%>
 
 <%= button_to("View Available Listings", listings_path(),
         method: "get") %>

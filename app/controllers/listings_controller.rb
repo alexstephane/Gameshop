@@ -45,6 +45,16 @@ class ListingsController < ApplicationController
       redirect_to listing_path(@listing)
     end
   end
+
+  def sell
+    @listing = Listing.find(params[:id])
+    @listing.update(user_id: session[:user_id], availability: true)
+    if @listing.valid?
+      redirect_to user_path(session[:user_id])
+    else
+      redirect_to listing_path(@listing)
+    end
+  end
     
   def destroy
     Listing.destroy(params[:id])
