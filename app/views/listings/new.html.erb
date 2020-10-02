@@ -8,8 +8,8 @@
 
 
 <%= form_for @listing do |f|%>
-<% f.label :user %>
-<% f.select :user, [User.find(session[:user_id]).name] %> 
+<%= f.label :user %>
+<%= f.select :user, [User.find(session[:user_id]).name] %> 
 <br>
 <%= f.label :game %>
 <%= f.collection_select :game_id, Game.all, :id, :name%> 
@@ -23,8 +23,8 @@
 <%= f.label :listed_price%>
 <%= f.number_field :listed_price %>
 <br>
-<% f.label :availability %>
-<% f.select :availability, ["True"] %>
+<%= f.label :availability %>
+<%= f.select :availability, ["True"] %>
 <br><br>
 <%= f. submit %></li>
 <%end%>
